@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/sidebar.css" />
   </head>
   <body>
     <header class="header">
@@ -58,7 +59,28 @@
       </nav>
     </header>
 
-    <main class="main"></main>
+    <div class="container">
+      <aside class="sidebar">
+        <nav class="sidebar__card" aria-label="목차">
+          <ul class="sidebar__list">
+            <li class="sidebar__item">
+              <a class="sidebar__link" href="#photo">📷 포토 덤프</a>
+            </li>
+            <li class="sidebar__item">
+              <a class="sidebar__link" href="#likes">좋아하는 것</a>
+            </li>
+            <li class="sidebar__item">
+              <a class="sidebar__link" href="#interests">내 관심사</a>
+            </li>
+            <li class="sidebar__item">
+              <a class="sidebar__link" href="#towebtory">To. 웹토리..</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="main"></main>
+    </div>
 
     <script src="js/main.js"></script>
   </body>

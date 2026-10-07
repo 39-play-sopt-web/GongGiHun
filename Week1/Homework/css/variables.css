@@ -9,6 +9,12 @@
   --color-bg: #ffffff;
   --gradient-header: linear-gradient(90deg, #e0fbf2 0%, #f1f8ee 100%);
 
+  /* 사이드바 색상: sidebar.css에서 사용 */
+  --gradient-sidebar: linear-gradient(160deg, #b5f5dd 0%, #bdebcf 100%);
+  --color-sidebar-card: rgba(255, 255, 255, 0.65);
+  --color-sidebar-card-hover: rgba(255, 255, 255, 0.95);
+  --color-sidebar-divider: #c4f0de;
+
   /* 헤더 크기: header.css, layout.css(.main의 padding-top)에서 같이 사용 */
   --header-height: 56px;
   --header-padding-x: 24px;
