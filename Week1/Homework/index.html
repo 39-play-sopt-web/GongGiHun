@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Air로그</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__left">
+        <a class="header__logo" href="/" aria-label="홈">
+          <img
+            class="header__logo-img"
+            src="assets/images/avatar.png"
+            alt="프로필"
+          />
+        </a>
+      </div>
+
+      <h1 class="header__title">Air로그</h1>
+
+      <nav class="header__right" aria-label="소셜 링크">
+        <!--
+          target="_blank": 새 탭에서 열기
+          rel="noopener": 새 탭이 window.opener로 원래 페이지를 조작하지 못하게 막음 (보안)
+          rel="noreferrer": 이동한 사이트에 내 페이지 주소(Referer)를 넘기지 않음 (개인정보)
+        -->
+        <a
+          class="header__social"
+          href="https://github.com/a1rhun"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <img
+            class="header__social-icon"
+            src="assets/icons/github.svg"
+            alt=""
+          />
+        </a>
+
+        <a
+          class="header__social"
+          href="https://velog.io/@a1rhun/posts"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="velog"
+        >
+          <img
+            class="header__social-icon header__social-icon--round"
+            src="assets/icons/velog.svg"
+            alt=""
+        /></a>
+      </nav>
+    </header>
+
+    <main class="main"></main>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

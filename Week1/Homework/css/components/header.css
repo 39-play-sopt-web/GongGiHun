@@ -1,0 +1,57 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  /* 좌/중/우 3등분: 화면이 줄어도 1/3씩 유지 */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+
+  height: var(--header-height);
+  padding: 0 var(--header-padding-x);
+  background: var(--gradient-header);
+}
+
+.header__left {
+  justify-self: start;
+}
+
+.header__logo {
+  display: block;
+}
+
+.header__logo-img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  transition: box-shadow 0.2s ease;
+}
+.header__logo-img:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.header__title {
+  justify-self: center;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.header__right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header__social-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.header__social-icon--round {
+  border-radius: 50%;
+}

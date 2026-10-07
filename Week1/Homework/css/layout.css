@@ -1,0 +1,17 @@
+/*
+  layout.css: 페이지 전체 뼈대
+  특정 컴포넌트에 속하지 않는 공통 스타일과 큰 배치만 둠.
+  (사이드바 + 본문 나누기 같은 .container grid도 여기에 추가 예정)
+*/
+
+/* 페이지 기본 폰트/색/배경: 값은 variables.css에서 가져옴 */
+body {
+  font-family: var(--font-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+/* 헤더가 fixed라 본문이 가려지지 않도록 높이만큼 비워둠 */
+.main {
+  padding-top: var(--header-height);
+}

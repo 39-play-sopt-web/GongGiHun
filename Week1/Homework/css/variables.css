@@ -1,0 +1,22 @@
+/*
+  variables.css: 페이지 전체에서 쓰는 디자인 값 모음
+  다른 css에서 var(--이름)으로 가져다 씀. 값을 바꾸려면 여기만 고치면 됨.
+  :root = <html> 요소라서 어느 파일에서든 변수 사용 가능
+*/
+:root {
+  /* 색상 */
+  --color-text: #1f2937;
+  --color-bg: #ffffff;
+  --gradient-header: linear-gradient(90deg, #e0fbf2 0%, #f1f8ee 100%);
+
+  /* 헤더 크기: header.css, layout.css(.main의 padding-top)에서 같이 사용 */
+  --header-height: 56px;
+  --header-padding-x: 24px;
+  --avatar-size: 32px;
+  --icon-size: 28px;
+
+  /* 폰트: 앞에서부터 순서대로 시도, 없으면 다음 폰트 사용 */
+  --font-base:
+    -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo",
+    sans-serif;
+}
