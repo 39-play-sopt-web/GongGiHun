@@ -5,7 +5,6 @@
 
   /* 위쪽은 fixed 헤더에 가려지는 높이만큼 + 여백 */
   padding: calc(var(--header-height) + 32px) 16px 32px;
-  background: var(--gradient-sidebar);
   display: flex;
   flex-direction: column;
   gap: 16px;

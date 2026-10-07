@@ -19,4 +19,12 @@ body {
 .container {
   display: grid;
   grid-template-columns: 240px 1fr; /* 사이드바 폭 고정 + 나머지 본문 */
+  background: var(--gradient-main);
+}
+
+.page {
+  display: none;
+}
+.page:target {
+  display: block;
 }
