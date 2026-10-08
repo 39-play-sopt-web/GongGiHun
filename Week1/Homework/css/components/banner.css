@@ -1,0 +1,49 @@
+/*
+  banner.css: 무한 루프 배너 (자동 이동 + 호버 시 멈춤 + 직접 스크롤)
+  - 사진 세트를 2번 이어 붙이고, 줄을 절반(-50%)만큼 밀면 처음 모습과 같아져서 끊김 없이 반복됨
+  - 호버하면 애니메이션이 멈추고, 그 동안 직접 스크롤 가능. 마우스를 떼면 이어서 다시 흐름
+*/
+.banner {
+  padding: 12px 0;
+  overflow-x: auto; /* 직접 스크롤 가능 */
+  scrollbar-width: none; /* Firefox 스크롤바 숨김 */
+}
+
+.banner::-webkit-scrollbar {
+  display: none; /* Chrome, Safari 스크롤바 숨김 */
+}
+
+.banner__track {
+  display: flex;
+  width: max-content; /* 줄 폭 = 내용물 전체 길이 (-50%가 원본 한 세트 길이가 되게) */
+  animation: banner-scroll 40s linear infinite; /* linear: 일정한 속도 */
+}
+
+/* 호버하는 동안 멈춤 → 그 동안 직접 스크롤, 떼면 멈춘 자리에서 이어서 재생 */
+.banner:hover .banner__track {
+  animation-play-state: paused;
+}
+
+.banner__item {
+  flex: 0 0 280px;
+  /* gap 대신 margin: 마지막 사진 뒤에도 간격이 있어야 원본/복사본 이음새가 정확히 맞음 */
+  margin-right: 16px;
+  overflow: hidden;
+}
+
+.banner__item:hover .banner__img {
+  transform: scale(1.1);
+}
+
+.banner__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 비율 유지, 안 찌그러짐 */
+  transition: transform 0.3s ease;
+}
+
+@keyframes banner-scroll {
+  to {
+    transform: translateX(-50%); /* 줄 전체의 절반 = 원본 한 세트 */
+  }
+}
