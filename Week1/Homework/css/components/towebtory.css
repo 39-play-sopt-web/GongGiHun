@@ -1,6 +1,6 @@
 .message {
   text-align: center;
-  background: #fff;
+  background: var(--color-message-bg);
   border-radius: 12px;
   padding: 12px 16px;
   margin: 12px 0;

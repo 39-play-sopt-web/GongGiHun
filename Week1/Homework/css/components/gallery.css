@@ -18,7 +18,6 @@
   gap: var(--gallery-gap); /* 모든 사진 사이 간격 동일 */
   padding: var(--gallery-gap) 0;
   height: var(--gallery-height);
-  background: var(--gradient-main);
 }
 
 .gallery__item {

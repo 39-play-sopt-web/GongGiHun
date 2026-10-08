@@ -6,18 +6,33 @@
 :root {
   /* 색상 */
   --color-text: #1f2937;
-  --color-bg: #ffffff;
-  --gradient-header: linear-gradient(90deg, #e0fbf2 0%, #f1f8ee 100%);
-  --gradient-main: linear-gradient(160deg, #b5f5dd 0%, #bdebcf 100%);
+  --color-bg: #eaf8f6;
+  --gradient-header: #eaf8f6;
+  --gradient-main: linear-gradient(
+    160deg,
+    #a8f0d8 0%,
+    #a5dff0 50%,
+    #c9c4f5 100%
+  );
+
+  /* 헤더 로고 호버 그림자: header.css에서 사용 */
+  --color-shadow: rgba(0, 0, 0, 0.25);
+
+  /* 푸터: footer.css에서 사용 */
+  --color-footer-bg: transparent;
+  --color-footer-text: var(--color-text);
+
+  /* 웹토리 메시지 박스: towebtory.css에서 사용 */
+  --color-message-bg: #ffffff;
 
   /* 사이드바 색상: sidebar.css에서 사용 */
   --color-sidebar-card: rgba(255, 255, 255, 0.65);
   --color-sidebar-card-hover: rgba(255, 255, 255, 0.95);
-  --color-sidebar-divider: #c4f0de;
+  --color-sidebar-divider: #cfe8f3;
 
   /* 갤러리: gallery.css에서 사용 */
   --color-gallery-bg: #ffffff;
-  --color-gallery-item: #cdfbd9; /* placeholder 색상 */
+  --color-gallery-item: #d6f1f5; /* placeholder 색상 */
   --gallery-gap: 18px;
   --gallery-height: 650px;
 
