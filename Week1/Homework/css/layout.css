@@ -5,6 +5,10 @@
 */
 
 /* 페이지 기본 폰트/색/배경: 값은 variables.css에서 가져옴 */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-base);
   color: var(--color-text);
@@ -23,8 +27,13 @@ body {
 }
 
 .page {
-  display: none;
+  scroll-margin-top: var(
+    --header-height
+  ); /* 고정 헤더에 섹션 제목 가리지 않게 */
+  padding: 32px 24px;
 }
-.page:target {
-  display: block;
+
+.page__title {
+  margin: 8px 0 0 0;
+  font-weight: 700px;
 }
