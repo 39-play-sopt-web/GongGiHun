@@ -25,6 +25,14 @@
   /* 웹토리 메시지 박스: towebtory.css에서 사용 */
   --color-message-bg: #ffffff;
 
+  /* 내 관심사 카드: cards.css에서 사용 */
+  --color-card-bg: #e3eefc;
+  --color-card-shadow: rgba(0, 0, 0, 0.15);
+  --color-btn-like: #8ab4f0;
+  --color-btn-like-hover: #5f98e8;
+  --color-btn-dislike: #e49a9a;
+  --color-btn-dislike-hover: #d97979;
+
   /* 사이드바 색상: sidebar.css에서 사용 */
   --color-sidebar-card: rgba(255, 255, 255, 0.65);
   --color-sidebar-card-hover: rgba(255, 255, 255, 0.95);
