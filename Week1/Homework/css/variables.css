@@ -42,7 +42,7 @@
   --color-gallery-bg: #ffffff;
   --color-gallery-item: #d6f1f5; /* placeholder 색상 */
   --gallery-gap: 18px;
-  --gallery-height: 650px;
+  --gallery-height: 800px;
 
   /* 헤더 크기: header.css, layout.css(.main의 padding-top)에서 같이 사용 */
   --header-height: 56px;
