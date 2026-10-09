@@ -1,0 +1,25 @@
+.message {
+  text-align: center;
+  background: var(--color-message-bg);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin: 12px 0;
+}
+
+.message__text {
+  font-size: 14px;
+  line-height: 160%;
+  font-weight: 600;
+}
+
+.message__text:last-child {
+  margin-top: 8px;
+}
+
+.message__text::before {
+  content: "👀 "; /* 텍스트 앞 */
+}
+
+.message__text::after {
+  content: " 🌱"; /* 텍스트 뒤 */
+}

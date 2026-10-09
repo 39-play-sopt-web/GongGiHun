@@ -1,0 +1,42 @@
+/*
+  layout.css: 페이지 전체 뼈대
+  특정 컴포넌트에 속하지 않는 공통 스타일과 큰 배치만 둠.
+  (사이드바 + 본문 나누기 같은 .container grid도 여기에 추가 예정)
+*/
+
+/* 페이지 기본 폰트/색/배경: 값은 variables.css에서 가져옴 */
+html {
+  scroll-behavior: smooth;
+  /* 오버스크롤(튕김) 영역 색. html에 배경이 있으면 body 그라데이션이 문서 높이에 맞게 한 번만 그려짐 */
+  background: var(--color-bg);
+}
+
+body {
+  font-family: var(--font-base);
+  color: var(--color-text);
+  /* 푸터까지 하나의 그라데이션으로 이어지도록 container가 아니라 body에 둠 */
+  background: var(--gradient-main);
+}
+
+/* 헤더가 fixed라 본문이 가려지지 않도록 높이만큼 비워둠 */
+.main {
+  padding-top: var(--header-height);
+}
+
+.container {
+  display: grid;
+  /* 1fr = minmax(auto, 1fr) 이어서, 최소 크기보다 작아지지 않아 칸이 넘치게 된다. */
+  grid-template-columns: 240px minmax(0, 1fr); /* 사이드바 폭 고정 + 나머지 본문 */
+}
+
+.page {
+  scroll-margin-top: var(
+    --header-height
+  ); /* 고정 헤더에 섹션 제목 가리지 않게 */
+  padding: 32px 24px;
+}
+
+.page__title {
+  margin: 8px 0 0 0;
+  font-weight: 700;
+}
