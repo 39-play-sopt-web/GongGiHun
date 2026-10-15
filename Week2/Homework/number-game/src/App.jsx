@@ -1,17 +1,30 @@
 import { useState } from "react";
 import Header from "./components/Header/Header";
+import GameBoard from "./components/GameBoard/GameBoard";
+import useGame from "./hooks/useGame";
 
 function App() {
   const [page, setPage] = useState("game");
   const [level, setLevel] = useState(1);
+  const { cells, next, total, handleCellClick } = useGame(level);
 
   return (
-    <Header
-      page={page}
-      onPageChange={setPage}
-      level={level}
-      onLevelChange={setLevel}
-    />
+    <>
+      <Header
+        page={page}
+        onPageChange={setPage}
+        level={level}
+        onLevelChange={setLevel}
+      />
+      {page === "game" && (
+        <GameBoard
+          cells={cells}
+          next={next}
+          total={total}
+          onCellClick={handleCellClick}
+        />
+      )}
+    </>
   );
 }
 
