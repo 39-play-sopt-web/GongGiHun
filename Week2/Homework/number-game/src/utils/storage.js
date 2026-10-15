@@ -1,0 +1,18 @@
+const RANKING_KEY = "ranking";
+
+export function getRecords() {
+  try {
+    return JSON.parse(localStorage.getItem(RANKING_KEY)) ?? [];
+  } catch {
+    return [];
+  }
+}
+
+// 기존 기록 읽은 후 추가
+export function saveRecord(record) {
+  localStorage.setItem(RANKING_KEY, JSON.stringify([...getRecords(), record]));
+}
+
+export function clearRecords() {
+  localStorage.removeItem(RANKING_KEY);
+}
