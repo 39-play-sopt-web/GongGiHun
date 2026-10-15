@@ -1,6 +1,13 @@
 import { Wrapper, Status, NextNumber, Grid, Cell } from "./GameBoard.styles";
 
-function GameBoard({ cells, next, total, onCellClick }) {
+function GameBoard({
+  cells,
+  next,
+  total,
+  onCellClick,
+  wrongIndex,
+  onWrongEnd,
+}) {
   return (
     <Wrapper>
       <Status>
@@ -10,6 +17,8 @@ function GameBoard({ cells, next, total, onCellClick }) {
         {cells.map((number, index) => (
           <Cell
             key={index}
+            $shake={index === wrongIndex}
+            onAnimationEnd={onWrongEnd}
             $empty={number === null}
             onClick={() => onCellClick(index)}
           >

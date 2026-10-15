@@ -16,6 +16,7 @@ function useGame(level) {
   const [game, setGame] = useState(createGame);
   const [startTime, setStartTime] = useState(null);
   const [elapsed, setElapsed] = useState(0);
+  const [wrongIndex, setWrongIndex] = useState(null);
 
   useEffect(() => {
     if (startTime === null) return;
@@ -42,7 +43,10 @@ function useGame(level) {
   };
 
   const handleCellClick = (index) => {
-    if (game.cells[index] !== game.next) return; // 틀린 숫자는 무시
+    if (game.cells[index] !== game.next) {
+      setWrongIndex(index);
+      return;
+    } // 무시 -> 틀리면 cell 흔들리게
     if (game.next === 1) setStartTime(Date.now()); // 1을 누르면 타이머 시작
     if (game.next === TOTAL) return finish(); // 마지막 숫자면 종료
 
@@ -62,6 +66,8 @@ function useGame(level) {
     elapsed,
     handleCellClick,
     reset,
+    wrongIndex,
+    clearWrong: () => setWrongIndex(null),
   };
 }
 

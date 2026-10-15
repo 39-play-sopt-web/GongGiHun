@@ -1,4 +1,12 @@
-import styled, { css } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
+
+const shake = keyframes`  
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-6px); }
+  40%      { transform: translateX(6px); }
+  60%      { transform: translateX(-4px); }
+  80%      { transform: translateX(4px); }
+`;
 
 export const Wrapper = styled.main`
   display: flex;
@@ -45,6 +53,12 @@ export const Cell = styled.button`
       visibility: hidden;
     `}
 
+  ${({ $shake }) =>
+    $shake &&
+    css`
+      animation: ${shake} 0.3s;
+    `}
+  
   &:hover {
     background: ${({ theme }) => theme.colors.surfaceHover};
     border-color: transparent;
