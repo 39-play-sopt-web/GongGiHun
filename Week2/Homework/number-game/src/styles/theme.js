@@ -3,6 +3,8 @@ export const theme = {
     text: "#1a1a1a",
     textMuted: "#6b7280",
     surface: "#ffffff",
+    surfaceHover: "#f3f4f6",
+    surfacePressed: "#e5e7eb",
     border: "#e5e7eb",
     primary: "#93c5fd",
     primaryText: "#1e3a8a",
