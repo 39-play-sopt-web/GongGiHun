@@ -1,0 +1,37 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  /* 위쪽은 fixed 헤더에 가려지는 높이만큼 + 여백 */
+  padding: calc(var(--header-height) + 32px) 16px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: -100vh;
+}
+
+.sidebar__card {
+  display: block;
+  border-radius: 20px;
+  background: var(--color-sidebar-card);
+  /* 모서리 밖으로 항목 배경이 튀어나오지 않게 */
+  overflow: hidden;
+}
+
+/* 항목 사이 구분선: 첫 항목은 빼고 두 번째부터 위에 선 */
+.sidebar__item + .sidebar__item {
+  border-top: 2px solid var(--color-sidebar-divider);
+}
+
+/* 항목 전체 영역이 클릭되도록 block + 큰 padding */
+.sidebar__link {
+  display: block;
+  padding: 18px 20px;
+  font-size: 18px;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar__link:hover {
+  background: var(--color-sidebar-card-hover);
+}

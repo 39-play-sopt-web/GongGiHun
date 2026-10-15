@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Air로그</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/sidebar.css" />
+    <link rel="stylesheet" href="css/components/gallery.css" />
+    <link rel="stylesheet" href="css/components/banner.css" />
+    <link rel="stylesheet" href="css/components/cards.css" />
+    <link rel="stylesheet" href="css/components/towebtory.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__left">
+        <a class="header__logo" href="/" aria-label="홈">
+          <img
+            class="header__logo-img"
+            src="assets/images/avatar.png"
+            alt="프로필"
+          />
+        </a>
+      </div>
+
+      <h1 class="header__title">Air로그</h1>
+
+      <nav class="header__right" aria-label="소셜 링크">
+        <a
+          class="header__social"
+          href="https://github.com/a1rhun"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <img
+            class="header__social-icon"
+            src="assets/icons/github.svg"
+            alt=""
+          />
+        </a>
+
+        <a
+          class="header__social"
+          href="https://velog.io/@a1rhun/posts"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="velog"
+        >
+          <img
+            class="header__social-icon header__social-icon--round"
+            src="assets/icons/velog.svg"
+            alt=""
+        /></a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <aside class="sidebar">
+        <nav class="sidebar__card" aria-label="목차">
+          <ul class="sidebar__list">
+            <li class="sidebar__item">
+              <a class="sidebar__link" href="#photo">📷 포토 덤프</a>
+            </li>
+            <li class="sidebar__item">
+              <a class="sidebar__link" href="#likes">좋아하는 것</a>
+            </li>
+            <li class="sidebar__item">
+              <a class="sidebar__link" href="#interests">내 관심사</a>
+            </li>
+            <li class="sidebar__item">
+              <a class="sidebar__link" href="#towebtory">To. 웹토리..</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <section class="page" id="photo">
+          <h2 class="page__title">📷 포토 덤프</h2>
+          <div class="gallery">
+            <div class="gallery__item">
+              <img
+                class="gallery__img"
+                src="assets/images/gallery/photo1.jpeg"
+                alt="티르..."
+              />
+            </div>
+            <div class="gallery__item">
+              <img
+                class="gallery__img"
+                src="assets/images/gallery/photo2.jpeg"
+                alt="콰삭모짜킹...."
+              />
+            </div>
+            <div class="gallery__item gallery__item--c">
+              <img
+                class="gallery__img"
+                src="assets/images/gallery/photo3.jpeg"
+                alt="아이스크림...."
+              />
+            </div>
+            <div class="gallery__item gallery__item--d">
+              <img
+                class="gallery__img"
+                src="assets/images/gallery/photo4.jpeg"
+                alt="안미츠...."
+              />
+            </div>
+            <div class="gallery__item">
+              <img
+                class="gallery__img"
+                src="assets/images/gallery/photo5.jpeg"
+                alt="라멘...."
+              />
+            </div>
+            <div class="gallery__item">
+              <img
+                class="gallery__img"
+                src="assets/images/gallery/photo6.jpeg"
+                alt="라멘...."
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="likes">
+          <h2 class="page__title">좋아하는 것: 라멘</h2>
+          <div class="banner">
+            <ul class="banner__track">
+              <li class="banner__item">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen1.jpeg"
+                  alt="그린라멘샵"
+                />
+              </li>
+              <li class="banner__item">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen2.jpeg"
+                  alt="멘야츠바사"
+                />
+              </li>
+              <li class="banner__item">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen3.jpeg"
+                  alt="이리에"
+                />
+              </li>
+              <li class="banner__item">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen4.jpeg"
+                  alt="이치니이치"
+                />
+              </li>
+              <li class="banner__item">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen5.jpeg"
+                  alt="이로치"
+                />
+              </li>
+              <li class="banner__item">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen6.jpeg"
+                  alt="호정"
+                />
+              </li>
+              <li class="banner__item">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen7.jpeg"
+                  alt="호정"
+                />
+              </li>
+              <li class="banner__item">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen8.jpeg"
+                  alt="멘야카엔ㄴ"
+                />
+              </li>
+              <li class="banner__item">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen9.jpeg"
+                  alt="카키코우죠"
+                />
+              </li>
+              <!-- 복사본: 무한 루프용 -->
+              <li class="banner__item" aria-hidden="true">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen1.jpeg"
+                  alt=""
+                />
+              </li>
+              <li class="banner__item" aria-hidden="true">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen2.jpeg"
+                  alt=""
+                />
+              </li>
+              <li class="banner__item" aria-hidden="true">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen3.jpeg"
+                  alt=""
+                />
+              </li>
+              <li class="banner__item" aria-hidden="true">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen4.jpeg"
+                  alt=""
+                />
+              </li>
+              <li class="banner__item" aria-hidden="true">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen5.jpeg"
+                  alt=""
+                />
+              </li>
+              <li class="banner__item" aria-hidden="true">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen6.jpeg"
+                  alt=""
+                />
+              </li>
+              <li class="banner__item" aria-hidden="true">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen7.jpeg"
+                  alt=""
+                />
+              </li>
+              <li class="banner__item" aria-hidden="true">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen8.jpeg"
+                  alt=""
+                />
+              </li>
+              <li class="banner__item" aria-hidden="true">
+                <img
+                  class="banner__img"
+                  src="assets/images/likes/ramen9.jpeg"
+                  alt=""
+                />
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="page" id="interests">
+          <h2 class="page__title">내 관심4</h2>
+          <ul class="cards">
+            <li class="card">
+              <img
+                class="card__img"
+                src="assets/images/interests/i1.png"
+                alt="혁오"
+              />
+              <h3 class="card__title">혁오</h3>
+              <div class="card__buttons">
+                <button class="card__btn card__btn--like" type="button">
+                  좋아요!
+                </button>
+                <button class="card__btn card__btn--dislike" type="button">
+                  싫어요..
+                </button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                class="card__img"
+                src="assets/images/interests/i2.png"
+                alt="데이먼스이어"
+              />
+              <h3 class="card__title">데이먼스이어</h3>
+              <div class="card__buttons">
+                <button class="card__btn card__btn--like" type="button">
+                  좋아요!
+                </button>
+                <button class="card__btn card__btn--dislike" type="button">
+                  싫어요..
+                </button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                class="card__img"
+                src="assets/images/interests/i3.png"
+                alt="파란노을"
+              />
+              <h3 class="card__title">파란노을</h3>
+              <div class="card__buttons">
+                <button class="card__btn card__btn--like" type="button">
+                  좋아요!
+                </button>
+                <button class="card__btn card__btn--dislike" type="button">
+                  싫어요..
+                </button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                class="card__img"
+                src="assets/images/interests/i4.png"
+                alt="실리카겔"
+              />
+              <h3 class="card__title">실리카겔</h3>
+              <div class="card__buttons">
+                <button class="card__btn card__btn--like" type="button">
+                  좋아요!
+                </button>
+                <button class="card__btn card__btn--dislike" type="button">
+                  싫어요..
+                </button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                class="card__img"
+                src="assets/images/interests/i5.png"
+                alt="검정치마"
+              />
+              <h3 class="card__title">검정치마</h3>
+              <div class="card__buttons">
+                <button class="card__btn card__btn--like" type="button">
+                  좋아요!
+                </button>
+                <button class="card__btn card__btn--dislike" type="button">
+                  싫어요..
+                </button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                class="card__img"
+                src="assets/images/interests/i6.png"
+                alt="웨이브투어스"
+              />
+              <h3 class="card__title">웨이브투어스</h3>
+              <div class="card__buttons">
+                <button class="card__btn card__btn--like" type="button">
+                  좋아요!
+                </button>
+                <button class="card__btn card__btn--dislike" type="button">
+                  싫어요..
+                </button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                class="card__img"
+                src="assets/images/interests/i7.png"
+                alt="양홍원"
+              />
+              <h3 class="card__title">양홍원</h3>
+              <div class="card__buttons">
+                <button class="card__btn card__btn--like" type="button">
+                  좋아요!
+                </button>
+                <button class="card__btn card__btn--dislike" type="button">
+                  싫어요..
+                </button>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="page" id="towebtory">
+          <h2 class="page__title">To. 웹토리...</h2>
+          <div class="message">
+            <p class="message__text">웹토리여러분들아</p>
+            <p class="message__text">
+              열심히하겟습니다. 잘 부탁드립니다!!!!!!!
+            </p>
+            <p class="message__text">반말한건 아니에요ㅎㅎ</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p class="footer__text">@a1rhun</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
