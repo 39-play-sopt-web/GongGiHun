@@ -8,7 +8,7 @@ const LEVEL_OPTIONS = [
   { value: 3, label: "Level 3 (5x5)" },
 ];
 
-function Header({ page, onPageChange, level, onLevelChange }) {
+function Header({ page, onPageChange, level, onLevelChange, elapsed }) {
   return (
     <Wrapper>
       <Logo>숫자 클릭 게임</Logo>
@@ -32,7 +32,7 @@ function Header({ page, onPageChange, level, onLevelChange }) {
               onChange={onLevelChange}
               options={LEVEL_OPTIONS}
             />
-            <Timer />
+            <Timer elapsed={elapsed} />
           </>
         )}
       </Right>

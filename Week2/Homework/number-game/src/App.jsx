@@ -6,7 +6,7 @@ import useGame from "./hooks/useGame";
 function App() {
   const [page, setPage] = useState("game");
   const [level, setLevel] = useState(1);
-  const { cells, next, total, handleCellClick } = useGame(level);
+  const { cells, next, total, elapsed, handleCellClick } = useGame(level);
 
   return (
     <>
@@ -15,6 +15,7 @@ function App() {
         onPageChange={setPage}
         level={level}
         onLevelChange={setLevel}
+        elapsed={elapsed}
       />
       {page === "game" && (
         <GameBoard
