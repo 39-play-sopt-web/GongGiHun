@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header/Header";
 import GameBoard from "./components/GameBoard/GameBoard";
+import Ranking from "./components/Ranking/Ranking";
 import useGame from "./hooks/useGame";
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
           onCellClick={handleCellClick}
         />
       )}
+
+      {page === "ranking" && <Ranking />}
     </>
   );
 }
