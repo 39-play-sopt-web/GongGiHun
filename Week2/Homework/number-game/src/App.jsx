@@ -21,13 +21,20 @@ function App() {
     clearWrong,
     result,
     closeResult,
+    reset,
   } = useGame();
+
+  const handlePageChange = (nextPage) => {
+    if (nextPage === page) return;
+    setPage(nextPage);
+    reset();
+  };
 
   return (
     <>
       <Header
         page={page}
-        onPageChange={setPage}
+        onPageChange={handlePageChange}
         level={level}
         onLevelChange={changeLevel}
         elapsed={elapsed}
