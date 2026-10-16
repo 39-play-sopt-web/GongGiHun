@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { shuffle, range } from "../utils/shuffle";
+import { formatTime } from "../utils/format";
 import { saveRecord } from "../utils/storage";
 
 const SIZE = 3;
@@ -36,7 +37,7 @@ function useGame(level) {
     setElapsed(playTime);
     setTimeout(() => {
       // 화면 갱신 후 alert
-      alert(`${(playTime / 1000).toFixed(2)}초`);
+      alert(`${formatTime(playTime)}`);
       saveRecord({ playedAt: Date.now(), level, playTime });
       reset();
     }, 0);

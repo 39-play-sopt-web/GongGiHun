@@ -1,7 +1,8 @@
 import { Time } from "./Timer.styles";
+import { formatTime } from "../../utils/format";
 
 function Timer({ elapsed }) {
-  return <Time>{(elapsed / 1000).toFixed(2)}초</Time>;
+  return <Time>{formatTime(elapsed)}</Time>;
 }
 
 export default Timer;
