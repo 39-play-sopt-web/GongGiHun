@@ -40,6 +40,11 @@ export const Cell = styled.button`
   border: 1px solid ${({ theme }) => theme.colors.border};
   font-size: 22px;
   font-weight: 700;
+  transition: transform 0.08s;
+
+  &:active {
+    transform: scale(0.94);
+  }
 
   ${({ theme: { colors, radius, shadow } }) => `
     border-radius: ${radius.md};
