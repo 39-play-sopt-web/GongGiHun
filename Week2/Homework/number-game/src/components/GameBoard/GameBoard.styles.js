@@ -30,7 +30,8 @@ export const NextNumber = styled.strong`
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 120px);
+  /* $size: 레벨별 한 줄 칸 수 (3, 4, 5). 렌더 시 props 받도록 */
+  grid-template-columns: repeat(${({ $size }) => $size}, 120px);
   gap: 8px;
 `;
 

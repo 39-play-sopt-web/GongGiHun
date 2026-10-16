@@ -4,6 +4,7 @@ function GameBoard({
   cells,
   next,
   total,
+  size,
   onCellClick,
   wrongIndex,
   onWrongEnd,
@@ -13,7 +14,7 @@ function GameBoard({
       <Status>
         다음 숫자 <NextNumber>{next}</NextNumber>({next} / {total})
       </Status>
-      <Grid>
+      <Grid $size={size}>
         {cells.map((number, index) => (
           <Cell
             key={index}

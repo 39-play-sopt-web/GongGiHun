@@ -6,16 +6,18 @@ import useGame from "./hooks/useGame";
 
 function App() {
   const [page, setPage] = useState("game");
-  const [level, setLevel] = useState(1);
   const {
     cells,
     next,
     total,
     elapsed,
+    level,
+    changeLevel,
+    size,
     handleCellClick,
     wrongIndex,
     clearWrong,
-  } = useGame(level);
+  } = useGame();
 
   return (
     <>
@@ -23,7 +25,7 @@ function App() {
         page={page}
         onPageChange={setPage}
         level={level}
-        onLevelChange={setLevel}
+        onLevelChange={changeLevel}
         elapsed={elapsed}
       />
       {page === "game" && (
@@ -31,6 +33,7 @@ function App() {
           cells={cells}
           next={next}
           total={total}
+          size={size}
           wrongIndex={wrongIndex}
           onWrongEnd={clearWrong}
           onCellClick={handleCellClick}
