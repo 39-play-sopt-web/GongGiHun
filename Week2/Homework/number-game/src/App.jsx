@@ -3,6 +3,8 @@ import Header from "./components/Header/Header";
 import GameBoard from "./components/GameBoard/GameBoard";
 import Ranking from "./components/Ranking/Ranking";
 import useGame from "./hooks/useGame";
+import Modal from "./components/Modal/Modal";
+import { formatTime } from "./utils/format";
 
 function App() {
   const [page, setPage] = useState("game");
@@ -17,6 +19,8 @@ function App() {
     handleCellClick,
     wrongIndex,
     clearWrong,
+    result,
+    closeResult,
   } = useGame();
 
   return (
@@ -41,6 +45,12 @@ function App() {
       )}
 
       {page === "ranking" && <Ranking />}
+
+      {result && (
+        <Modal title={`Level ${result.level} 클리어!`} onClose={closeResult}>
+          {formatTime(result.playTime)}
+        </Modal>
+      )}
     </>
   );
 }
