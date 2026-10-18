@@ -7,7 +7,7 @@
 
   /* 좌/중/우 3등분: 화면이 줄어도 1/3씩 유지 */
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: center;
 
   height: var(--header-height);
@@ -15,12 +15,9 @@
   background: var(--gradient-header);
 }
 
-.header__left {
-  justify-self: start;
-}
-
 .header__logo {
   display: block;
+  justify-self: start;
 }
 
 .header__logo-img {
@@ -37,7 +34,11 @@
   justify-self: center;
   font-size: 16px;
   font-weight: 600;
-  white-space: nowrap;
+  max-width: 100%;
+
+  white-space: nowrap; /* 1. 줄바꿈 안 함 (한 줄로 유지) */
+  overflow: hidden; /* 2. 넘치는 부분 숨김 */
+  text-overflow: ellipsis; /* 3. 숨긴 자리에 … 표시 */
 }
 
 .header__right {
