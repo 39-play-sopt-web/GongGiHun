@@ -54,3 +54,7 @@ export const Message = styled.p(
     color: ${theme.colors.textSecondary};
   `,
 );
+
+export const Sentinel = styled.div`
+  height: 1px;
+`;
