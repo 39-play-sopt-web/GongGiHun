@@ -7,5 +7,5 @@ type ImageSize = "w200" | "w500" | "original";
 export const getImageURL = (path: string | null, size: ImageSize = "w500") => {
   // 포스터가 없는 영화는 path가 null → 컴포넌트에서 대체 이미지 처리
   if (!path) return null;
-  return `${IMAGE_BASE_URL}/ ${size}${path}`;
+  return `${IMAGE_BASE_URL}/${size}${path}`;
 };
