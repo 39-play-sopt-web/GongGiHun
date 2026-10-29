@@ -9,3 +9,11 @@ export const formatDate = (date: string) => {
     day: "numeric",
   });
 };
+
+// 179 -> 2시간 59분
+
+export const formatRuntime = (minutes: number) => {
+  const hours = Math.floor(minutes / 60);
+  const mins = minutes % 60;
+  return minutes >= 60 ? `${hours}시간 ${mins}분` : `${mins}분`;
+};
