@@ -1,4 +1,4 @@
-import { Outlet } from "react-router";
+import { Outlet, ScrollRestoration } from "react-router";
 import * as S from "./Layout.styles";
 
 const Layout = () => {
@@ -13,6 +13,7 @@ const Layout = () => {
       <S.Main>
         <Outlet />
       </S.Main>
+      <ScrollRestoration />
     </>
   );
 };

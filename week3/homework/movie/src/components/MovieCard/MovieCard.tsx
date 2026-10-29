@@ -2,7 +2,6 @@ import type { Movie } from "../../types/movie";
 import { getImageURL } from "../../utils/image";
 import * as S from "./MovieCard.styles";
 import { formatDate } from "../../utils/date";
-import { FaStar } from "react-icons/fa";
 
 interface MovieCardProps {
   movie: Movie;
