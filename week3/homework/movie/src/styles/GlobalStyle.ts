@@ -1,5 +1,5 @@
-import { css } from '@emotion/react';
-import type { Theme } from '@emotion/react';
+import { css } from "@emotion/react";
+import type { Theme } from "@emotion/react";
 
 export const globalStyle = (theme: Theme) => css`
   *,
@@ -16,9 +16,15 @@ export const globalStyle = (theme: Theme) => css`
 
   body {
     min-height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+    font-family:
+      "Pretendard Variable",
+      "Pretendard",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Apple SD Gothic Neo",
+      sans-serif;
     font-size: ${theme.fontSizes.md};
-    
+
     color: ${theme.colors.textPrimary};
     background-color: ${theme.colors.background};
     -webkit-font-smoothing: antialiased;

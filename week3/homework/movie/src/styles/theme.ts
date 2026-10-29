@@ -10,6 +10,8 @@ const colors = {
 
   primary: "#e50914",
   primaryHover: "#f6121d",
+  primarySubtle: "rgba(229, 9, 20, 0.15)",
+  primaryText: "#ff6b72",
   rating: "#f5c518",
   error: "#ff4d4f",
 } as const;
@@ -26,6 +28,7 @@ const fontSizes = {
 const fontWeights = {
   regular: 400,
   medium: 500,
+  semibold: 600,
   bold: 700,
 } as const;
 
