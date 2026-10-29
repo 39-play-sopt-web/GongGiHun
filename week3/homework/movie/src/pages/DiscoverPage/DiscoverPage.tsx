@@ -5,6 +5,7 @@ import MovieCard from "../../components/MovieCard/MovieCard";
 import { RATING_FILTERS } from "../../constants/filter";
 import * as S from "./DiscoverPage.styles";
 import { useSearchParams } from "react-router";
+import ScrollToTopButton from "../../components/ScrollToTop/ScrollToTopButton";
 
 interface ListCache {
   filterValue: string;
@@ -141,6 +142,7 @@ const DiscoverPage = () => {
       {!isLoading && !isError && movies.length === 0 && (
         <S.Message>해당 평점의 영화가 없습니다. </S.Message>
       )}
+      <ScrollToTopButton />
     </section>
   );
 };
