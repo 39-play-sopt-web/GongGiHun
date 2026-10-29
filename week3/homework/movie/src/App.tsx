@@ -1,12 +1,9 @@
-import { useEffect } from "react";
-import { getMovies } from "./apis/movie";
+import { RouterProvider } from "react-router";
+import { router } from "./router";
 
 
 const App = () => {
-    useEffect(() => {
-        getMovies().then((data) => console.log(data));
-    }, []);
-
-    return <h1>hello</h1>;
+    return <RouterProvider router = {router} />
 }
+
 export default App;
