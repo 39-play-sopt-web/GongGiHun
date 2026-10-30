@@ -1,17 +1,19 @@
 const colors = {
-  background: "#141414",
-  surface: "#1f1f1f",
-  surfaceHover: "#2a2a2a",
-  border: "#333333",
+  background: "#0f1014",
+  surface: "#181a20",
+  surfaceHover: "#22252d",
+  border: "rgba(255, 255, 255, 0.08)",
 
-  textPrimary: "#ffffff",
-  textSecondary: "#b3b3b3",
-  textDisabled: "#666666",
+  textPrimary: "#f5f6f8",
+  textSecondary: "#a1a5b0",
+  textDisabled: "#6b7080",
 
-  primary: "#e50914",
-  primaryHover: "#f6121d",
-  primarySubtle: "rgba(229, 9, 20, 0.15)",
-  primaryText: "#ff6b72",
+  primary: "#e5383b",
+  onPrimary: "#fff",
+  primaryHover: "#ef5355",
+  primarySubtle: "rgba(229, 56, 59, 0.15)",
+  primaryText: "#ff7a7d",
+
   rating: "#f5c518",
   error: "#ff4d4f",
 } as const;
@@ -53,6 +55,10 @@ const breakpoints = {
   tablet: "@media (max-width: 1024px)",
 } as const;
 
+const media = {
+  hover: "@media (hover: hover) and (pointer: fine)",
+} as const;
+
 export const theme = {
   colors,
   fontSizes,
@@ -60,6 +66,7 @@ export const theme = {
   spacing,
   radius,
   breakpoints,
+  media,
 } as const;
 
 export type Theme = typeof theme;

@@ -118,6 +118,8 @@ const DiscoverPage = () => {
         {RATING_FILTERS.map((f) => (
           <S.FilterChip
             key={f.label}
+            type="button"
+            aria-pressed={f.value === filter.value}
             isActive={f.value === filter.value}
             onClick={() => handleFilterClick(f.value)}
           >

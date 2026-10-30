@@ -21,8 +21,10 @@ export const BackButton = styled.button(
     color: ${theme.colors.textSecondary};
     transition: color 0.2s;
 
-    &:hover {
-      color: ${theme.colors.textPrimary};
+    ${theme.media.hover} {
+      &:hover {
+        color: ${theme.colors.textPrimary};
+      }
     }
   `,
 );

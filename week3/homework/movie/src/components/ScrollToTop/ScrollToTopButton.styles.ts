@@ -29,7 +29,7 @@ export const Button = styled.button<{ isVisible: boolean }>(
     box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.4);
 
     font-size: 2.2rem;
-    color: ${theme.colors.textPrimary};
+    color: ${theme.colors.onPrimary};
 
     /* 숨김 ↔ 표시를 부드럽게 */
     opacity: ${isVisible ? 1 : 0};
@@ -40,8 +40,14 @@ export const Button = styled.button<{ isVisible: boolean }>(
       transform 0.2s,
       visibility 0.2s;
 
-    &:hover {
-      background-color: ${theme.colors.primaryHover};
+    ${theme.media.hover} {
+      &:hover {
+        background-color: ${theme.colors.primaryHover};
+      }
+    }
+
+    &:active {
+      transform: scale(0.92);
     }
   `,
 );

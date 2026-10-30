@@ -22,11 +22,20 @@ export const FilterChip = styled.button<{ isActive: boolean }>(
     padding: 0.6rem 1.4rem;
     border-radius: ${theme.radius.full};
     font-size: ${theme.fontSizes.xs};
-    color: ${isActive ? theme.colors.background : theme.colors.textSecondary};
+    color: ${isActive ? theme.colors.onPrimary : theme.colors.textSecondary};
     background-color: ${isActive ? theme.colors.primary : theme.colors.surface};
+    transition:
+      color 0.2s,
+      background-color 0.2s;
 
-    &:hover {
-      color: ${isActive ? theme.colors.background : theme.colors.textPrimary};
+    ${theme.media.hover} {
+      &:hover {
+        color: ${isActive ? theme.colors.onPrimary : theme.colors.textPrimary};
+      }
+    }
+
+    &:active {
+      transform: scale(0.98);
     }
   `,
 );

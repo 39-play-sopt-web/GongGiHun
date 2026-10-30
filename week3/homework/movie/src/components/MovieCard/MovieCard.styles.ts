@@ -13,9 +13,15 @@ export const Card = styled(Link)`
   transition:
     transform 0.2s,
     box-shadow 0.2s;
-  &:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.5);
+  ${({ theme }) => theme.media.hover} {
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
   }
 `;
 
@@ -71,7 +77,7 @@ export const RatingBadge = styled.span`
 
 export const ReleaseDate = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.xs};
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.textSecondary};
 `;
 
 export const Overview = styled.p`
