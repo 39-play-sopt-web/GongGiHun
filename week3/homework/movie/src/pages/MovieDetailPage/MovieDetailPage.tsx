@@ -6,6 +6,12 @@ import type { MovieDetail } from "../../types/movie";
 import { getImageURL } from "../../utils/image";
 import { formatDate, formatRuntime } from "../../utils/date";
 import * as S from "./MovieDetailPage.styles";
+import {
+  formatCountry,
+  formatLanguage,
+  formatMoney,
+  formatStatus,
+} from "../../utils/format";
 
 const MovieDetailPage = () => {
   const { movieId } = useParams();
@@ -64,7 +70,7 @@ const MovieDetailPage = () => {
 
       <S.Header>
         <S.Title>{movie.title}</S.Title>
-        {subTitle && <S.Subtitle>{subTitle}</S.Subtitle>}
+        {movie.tagline && <S.Subtitle>{movie.tagline}</S.Subtitle>}
       </S.Header>
 
       <S.Body>
@@ -80,10 +86,13 @@ const MovieDetailPage = () => {
             )}
 
             <S.RatingBlock>
-              <S.RatingScore>
-                <S.StarIcon aria-hidden />
-                {movie.vote_average.toFixed(1)}
-              </S.RatingScore>
+              <S.RatingRow>
+                <S.RatingScore>
+                  <S.StarIcon aria-hidden />
+                  {movie.vote_average.toFixed(1)}
+                </S.RatingScore>
+                <S.StatusBadge>{formatStatus(movie.status)}</S.StatusBadge>
+              </S.RatingRow>
               <S.RatingCount>
                 {movie.vote_count.toLocaleString()}명 평가
               </S.RatingCount>
@@ -106,7 +115,6 @@ const MovieDetailPage = () => {
 
             <S.InfoItemWide>
               <S.GenreList>
-                {" "}
                 {movie.genres.map((genre) => (
                   <S.GenreChip key={genre.id}>{genre.name}</S.GenreChip>
                 ))}
@@ -116,10 +124,50 @@ const MovieDetailPage = () => {
         </S.InfoCard>{" "}
       </S.Body>
 
-      <S.OverviewSection>
+      <S.Section>
         <S.SectionTitle>줄거리</S.SectionTitle>
         <S.Overview>{movie.overview || "중거리 정보가 없습니다."}</S.Overview>
-      </S.OverviewSection>
+      </S.Section>
+
+      <S.Section>
+        <S.SectionTitle>기본 정보</S.SectionTitle>
+        <S.InfoCard>
+          <S.InfoGridWide>
+            <S.InfoItem>
+              <S.Label>원제</S.Label>
+              <S.Value>{movie.original_title}</S.Value>
+            </S.InfoItem>
+            <S.InfoItem>
+              <S.Label>원어</S.Label>
+              <S.Value>{formatLanguage(movie.original_language)}</S.Value>
+            </S.InfoItem>
+            <S.InfoItem>
+              <S.Label>제작 국가</S.Label>
+              <S.Value>
+                {movie.production_countries
+                  .map((c) => formatCountry(c.iso_3166_1))
+                  .join(", ") || "정보 없음"}
+              </S.Value>
+            </S.InfoItem>
+            <S.InfoItem>
+              <S.Label>사용 언어</S.Label>
+              <S.Value>
+                {movie.spoken_languages
+                  .map((l) => formatLanguage(l.iso_639_1))
+                  .join(", ") || "정보 없음"}
+              </S.Value>
+            </S.InfoItem>
+            <S.InfoItem>
+              <S.Label>예산</S.Label>
+              <S.Value>{formatMoney(movie.budget)}</S.Value>
+            </S.InfoItem>
+            <S.InfoItem>
+              <S.Label>수익</S.Label>
+              <S.Value>{formatMoney(movie.revenue)}</S.Value>
+            </S.InfoItem>
+          </S.InfoGridWide>
+        </S.InfoCard>
+      </S.Section>
     </S.Container>
   );
 };

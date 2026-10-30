@@ -210,21 +210,28 @@ export const GenreChip = styled.span(
   ({ theme }) => css`
     padding: 0.6rem 1.2rem;
     border-radius: ${theme.radius.full};
-    background-color: ${theme.colors.primarySubtle}
+    background-color: ${theme.colors.primarySubtle};
     font-size: ${theme.fontSizes.xs};
     font-weight: ${theme.fontWeights.medium};
-    color: ${theme.colors.primaryText}
+    color: ${theme.colors.primaryText};
   `,
 );
 
 /* 줄거리 */
 
-export const OverviewSection = styled.section(
+/* 섹션 공통 (줄거리, 기본 정보) */
+export const Section = styled.section(
   ({ theme }) => css`
     display: flex;
     flex-direction: column;
     gap: ${theme.spacing.sm};
-    max-width: 72rem; /* 한 줄이 너무 길면 읽기 힘듦 */
+  `,
+);
+
+export const Overview = styled.p(
+  ({ theme }) => css`
+    max-width: 72rem; /* 한 줄이 너무 길면 읽기 힘듦 → 문단에만 적용 */
+    ...
   `,
 );
 
@@ -235,19 +242,39 @@ export const SectionTitle = styled.h2(
   `,
 );
 
-export const Overview = styled.p(
-  ({ theme }) => css`
-    font-size: ${theme.fontSizes.md};
-    line-height: 1.7;
-    color: ${theme.colors.textSecondary};
-    word-break: keep-all;
-  `,
-);
-
 export const Message = styled.p(
   ({ theme }) => css`
     padding: ${theme.spacing.xxl} 0;
     text-align: center;
     color: ${theme.colors.textSecondary};
+  `,
+);
+
+export const RatingRow = styled.div(
+  ({ theme }) => css`
+    display: flex;
+    align-items: center;
+    gap: ${theme.spacing.sm};
+  `,
+);
+
+export const StatusBadge = styled.span(
+  ({ theme }) => css`
+    padding: 0.3rem 0.8rem;
+    border-radius: ${theme.radius.full};
+    background-color: ${theme.colors.surfaceHover};
+    font-size: ${theme.fontSizes.xs};
+    color: ${theme.colors.textSecondary};
+  `,
+);
+
+// 기본 정보용: 데스크탑 3열, 태블릿 이하 2열
+export const InfoGridWide = styled(InfoGrid)(
+  ({ theme }) => css`
+    grid-template-columns: repeat(3, 1fr);
+
+    ${theme.breakpoints.tablet} {
+      grid-template-columns: repeat(2, 1fr);
+    }
   `,
 );
