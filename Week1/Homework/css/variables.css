@@ -1,0 +1,57 @@
+/*
+  variables.css: 페이지 전체에서 쓰는 디자인 값 모음
+  다른 css에서 var(--이름)으로 가져다 씀. 값을 바꾸려면 여기만 고치면 됨.
+  :root = <html> 요소라서 어느 파일에서든 변수 사용 가능
+*/
+:root {
+  /* 색상 */
+  --color-text: #1f2937;
+  --color-bg: #eaf8f6;
+  --gradient-header: #eaf8f6;
+  --gradient-main: linear-gradient(
+    160deg,
+    #a8f0d8 0%,
+    #a5dff0 50%,
+    #c9c4f5 100%
+  );
+
+  /* 헤더 로고 호버 그림자: header.css에서 사용 */
+  --color-shadow: rgba(0, 0, 0, 0.25);
+
+  /* 푸터: footer.css에서 사용 */
+  --color-footer-bg: transparent;
+  --color-footer-text: var(--color-text);
+
+  /* 웹토리 메시지 박스: towebtory.css에서 사용 */
+  --color-message-bg: #ffffff;
+
+  /* 내 관심사 카드: cards.css에서 사용 */
+  --color-card-bg: #e3eefc;
+  --color-card-shadow: rgba(0, 0, 0, 0.15);
+  --color-btn-like: #8ab4f0;
+  --color-btn-like-hover: #5f98e8;
+  --color-btn-dislike: #e49a9a;
+  --color-btn-dislike-hover: #d97979;
+
+  /* 사이드바 색상: sidebar.css에서 사용 */
+  --color-sidebar-card: rgba(255, 255, 255, 0.65);
+  --color-sidebar-card-hover: rgba(255, 255, 255, 0.95);
+  --color-sidebar-divider: #cfe8f3;
+
+  /* 갤러리: gallery.css에서 사용 */
+  --color-gallery-bg: #ffffff;
+  --color-gallery-item: #d6f1f5; /* placeholder 색상 */
+  --gallery-gap: 18px;
+  --gallery-height: 800px;
+
+  /* 헤더 크기: header.css, layout.css(.main의 padding-top)에서 같이 사용 */
+  --header-height: 56px;
+  --header-padding-x: 24px;
+  --avatar-size: 32px;
+  --icon-size: 28px;
+
+  /* 폰트: 앞에서부터 순서대로 시도, 없으면 다음 폰트 사용 */
+  --font-base:
+    -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo",
+    sans-serif;
+}

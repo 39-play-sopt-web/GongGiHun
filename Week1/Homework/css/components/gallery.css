@@ -1,0 +1,49 @@
+/*
+  gallery.css: 사진 6장 grid 레이아웃
+  열 4개 x 행 3개 격자에 사진을 배치함.
+
+        열1   열2   열3   열4
+  행1  [ A ] [ B ] [   C   ]
+  행2  [     D     ] [ E ]
+  행3  [     D     ] [ F ]
+*/
+.gallery {
+  display: grid;
+  /* minmax(0, 1fr): 사진 원본 크기와 상관없이 칸을 균등하게 나눔 (그냥 1fr은 사진 크기만큼 칸이 커짐) */
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 열 4등분 */
+  grid-template-rows: repeat(
+    3,
+    minmax(0, 1fr)
+  ); /* 행 3등분 (전체 높이는 아래 height 기준) */
+  gap: var(--gallery-gap); /* 모든 사진 사이 간격 동일 */
+  padding: var(--gallery-gap) 0;
+  height: var(--gallery-height);
+}
+
+.gallery__item {
+  background: var(--color-gallery-item);
+  overflow: hidden;
+}
+
+.gallery__item:hover .gallery__img {
+  transform: scale(1.2);
+}
+
+/* C: 열3~4  */
+.gallery__item--c {
+  grid-column: 3 / 5;
+}
+
+/* D: 열1~3, 행2~3 */
+.gallery__item--d {
+  grid-column: 1 / 4;
+  grid-row: 2 / 4;
+}
+
+/* 나중에 사진을 넣으면 칸에 꽉 차게 */
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}

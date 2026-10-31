@@ -1,0 +1,58 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  /* 좌/중/우 3등분: 화면이 줄어도 1/3씩 유지 */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+
+  height: var(--header-height);
+  padding: 0 var(--header-padding-x);
+  background: var(--gradient-header);
+}
+
+.header__logo {
+  display: block;
+  justify-self: start;
+}
+
+.header__logo-img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  transition: box-shadow 0.2s ease;
+}
+.header__logo-img:hover {
+  box-shadow: 0 2px 8px var(--color-shadow);
+}
+
+.header__title {
+  justify-self: center;
+  font-size: 16px;
+  font-weight: 600;
+  max-width: 100%;
+
+  white-space: nowrap; /* 1. 줄바꿈 안 함 (한 줄로 유지) */
+  overflow: hidden; /* 2. 넘치는 부분 숨김 */
+  text-overflow: ellipsis; /* 3. 숨긴 자리에 … 표시 */
+}
+
+.header__right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header__social-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.header__social-icon--round {
+  border-radius: 50%;
+}
