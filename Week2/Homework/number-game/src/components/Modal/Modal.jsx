@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Overlay, Box, Title, Body, ConfirmButton } from "./Modal.styles";
+import * as S from "./Modal.styles";
 
 function Modal({ title, children, onClose }) {
   //ESC 닫기
@@ -14,16 +14,20 @@ function Modal({ title, children, onClose }) {
 
   return createPortal(
     // 반투명 배경인 경우 닫기
-    <Overlay onClick={onClose}>
+    <S.Overlay onClick={onClose}>
       {/* 이벤트 버블링 막기 */}
-      <Box role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
-        <Title>{title}</Title>
-        <Body>{children}</Body>
-        <ConfirmButton onClick={onClose} autoFocus>
+      <S.Box
+        role="dialog"
+        aria-modal="true"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <S.Title>{title}</S.Title>
+        <S.Body>{children}</S.Body>
+        <S.ConfirmButton onClick={onClose} autoFocus>
           확인
-        </ConfirmButton>
-      </Box>
-    </Overlay>,
+        </S.ConfirmButton>
+      </S.Box>
+    </S.Overlay>,
     document.getElementById("modal-root"),
   );
 }

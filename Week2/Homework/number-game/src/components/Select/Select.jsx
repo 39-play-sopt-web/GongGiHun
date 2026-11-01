@@ -1,10 +1,10 @@
 import chevronDown from "../../assets/chevron-down.svg";
-import { Wrapper, StyledSelect, Chevron } from "./Select.styles";
+import * as S from "./Select.styles";
 
 function Select({ value, onChange, options }) {
   return (
-    <Wrapper>
-      <StyledSelect
+    <S.Wrapper>
+      <S.StyledSelect
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
       >
@@ -13,9 +13,9 @@ function Select({ value, onChange, options }) {
             {label}
           </option>
         ))}
-      </StyledSelect>
-      <Chevron src={chevronDown} alt="" />
-    </Wrapper>
+      </S.StyledSelect>
+      <S.Chevron src={chevronDown} alt="" />
+    </S.Wrapper>
   );
 }
 

@@ -1,4 +1,4 @@
-import { Wrapper, Logo, Nav, Tab, Right } from "./Header.styles";
+import * as S from "./Header.styles";
 import Select from "../Select/Select";
 import Timer from "../Timer/Timer";
 
@@ -10,21 +10,21 @@ const LEVEL_OPTIONS = [
 
 function Header({ page, onPageChange, level, onLevelChange, elapsed }) {
   return (
-    <Wrapper>
-      <Logo>숫자 클릭 게임</Logo>
-      <Nav>
-        <Tab $active={page === "game"} onClick={() => onPageChange("game")}>
+    <S.Wrapper>
+      <S.Logo>숫자 클릭 게임</S.Logo>
+      <S.Nav>
+        <S.Tab $active={page === "game"} onClick={() => onPageChange("game")}>
           게임
-        </Tab>
-        <Tab
+        </S.Tab>
+        <S.Tab
           $active={page === "ranking"}
           onClick={() => onPageChange("ranking")}
         >
           랭킹
-        </Tab>
-      </Nav>
+        </S.Tab>
+      </S.Nav>
 
-      <Right>
+      <S.Right>
         {page === "game" && (
           <>
             <Select
@@ -35,8 +35,8 @@ function Header({ page, onPageChange, level, onLevelChange, elapsed }) {
             <Timer elapsed={elapsed} />
           </>
         )}
-      </Right>
-    </Wrapper>
+      </S.Right>
+    </S.Wrapper>
   );
 }
 

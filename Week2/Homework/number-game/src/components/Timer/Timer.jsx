@@ -1,8 +1,8 @@
-import { Time } from "./Timer.styles";
+import * as S from "./Timer.styles";
 import { formatTime } from "../../utils/format";
 
 function Timer({ elapsed }) {
-  return <Time>{formatTime(elapsed)}</Time>;
+  return <S.Time>{formatTime(elapsed)}</S.Time>;
 }
 
 export default Timer;

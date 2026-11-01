@@ -1,4 +1,4 @@
-import { Wrapper, Status, NextNumber, Grid, Cell } from "./GameBoard.styles";
+import * as S from "./GameBoard.styles";
 
 function GameBoard({
   cells,
@@ -10,13 +10,13 @@ function GameBoard({
   onWrongEnd,
 }) {
   return (
-    <Wrapper>
-      <Status>
-        다음 숫자 <NextNumber>{next}</NextNumber>({next} / {total})
-      </Status>
-      <Grid $size={size}>
+    <S.Wrapper>
+      <S.Status>
+        다음 숫자 <S.NextNumber>{next}</S.NextNumber>({next} / {total})
+      </S.Status>
+      <S.Grid $size={size}>
         {cells.map((number, index) => (
-          <Cell
+          <S.Cell
             key={index}
             $shake={index === wrongIndex}
             onAnimationEnd={onWrongEnd}
@@ -24,10 +24,10 @@ function GameBoard({
             onClick={() => onCellClick(index)}
           >
             {number}
-          </Cell>
+          </S.Cell>
         ))}
-      </Grid>
-    </Wrapper>
+      </S.Grid>
+    </S.Wrapper>
   );
 }
 

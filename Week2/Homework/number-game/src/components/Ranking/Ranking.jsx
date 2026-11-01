@@ -1,13 +1,5 @@
 import { useState } from "react";
-import {
-  Wrapper,
-  TitleRow,
-  Title,
-  ResetButton,
-  Table,
-  Rank,
-  Empty,
-} from "./Ranking.styles";
+import * as S from "./Ranking.styles";
 
 import { formatDate, formatTime } from "../../utils/format";
 import { clearRecords, getRecords } from "../../utils/storage";
@@ -27,15 +19,15 @@ function Ranking() {
   };
 
   return (
-    <Wrapper>
-      <TitleRow>
-        <Title>랭킹</Title>
-        <ResetButton onClick={handleReset}>초기화</ResetButton>
-      </TitleRow>
+    <S.Wrapper>
+      <S.TitleRow>
+        <S.Title>랭킹</S.Title>
+        <S.ResetButton onClick={handleReset}>초기화</S.ResetButton>
+      </S.TitleRow>
       {sorted.length === 0 ? (
-        <Empty> 아직 기록이 없어요..</Empty>
+        <S.Empty> 아직 기록이 없어요..</S.Empty>
       ) : (
-        <Table>
+        <S.Table>
           <thead>
             <tr>
               <th>순위</th>
@@ -47,16 +39,16 @@ function Ranking() {
           <tbody>
             {sorted.map((record, index) => (
               <tr key={record.playedAt}>
-                <Rank>{index + 1}</Rank>
+                <S.Rank>{index + 1}</S.Rank>
                 <td>Level {record.level}</td>
                 <td>{formatTime(record.playTime)}</td>
                 <td>{formatDate(record.playedAt)}</td>
               </tr>
             ))}
           </tbody>
-        </Table>
+        </S.Table>
       )}
-    </Wrapper>
+    </S.Wrapper>
   );
 }
 
