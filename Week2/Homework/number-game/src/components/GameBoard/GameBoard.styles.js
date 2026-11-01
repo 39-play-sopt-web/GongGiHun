@@ -31,16 +31,17 @@ export const NextNumber = styled.strong`
 export const Grid = styled.div`
   display: grid;
   /* $size: 레벨별 한 줄 칸 수 (3, 4, 5). 렌더 시 props 받도록 */
-  grid-template-columns: repeat(${({ $size }) => $size}, 120px);
+  grid-template-columns: repeat(${({ $size }) => $size}, minmax(0, 1fr));
   gap: 8px;
+  width: min(100%, ${({ $size }) => $size * 120 + ($size - 1) * 8}px);
 `;
 
 export const Cell = styled.button`
-  height: 120px;
   border: 1px solid ${({ theme }) => theme.colors.border};
-  font-size: 22px;
+  font-size: clamp(14px, 4vw, 22px);
   font-weight: 700;
   transition: transform 0.08s;
+  aspect-ratio: 1;
 
   &:active {
     transform: scale(0.94);
