@@ -8,6 +8,7 @@ function GameBoard({
   onCellClick,
   wrongIndex,
   onWrongEnd,
+  firstCellRef,
 }) {
   return (
     <S.Wrapper>
@@ -18,6 +19,7 @@ function GameBoard({
         {cells.map((number, index) => (
           <S.Cell
             key={index}
+            ref={index === 0 ? firstCellRef : undefined}
             $shake={index === wrongIndex}
             onAnimationEnd={onWrongEnd}
             $empty={number === null}
