@@ -9,6 +9,7 @@ export const theme = {
     primary: "#93c5fd",
     primaryText: "#1e3a8a",
     danger: "#dc2626",
+    surfaceModal: "#dbeafe",
     bgFrom: "#dbeafe",
     bgVia: "#bfdbfe",
     bgTo: "#c7d2fe",

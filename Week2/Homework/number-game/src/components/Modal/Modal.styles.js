@@ -21,7 +21,7 @@ export const Box = styled.div`
 
   ${({ theme: { colors, radius } }) => `
     border-radius: ${radius.md};
-    background: ${colors.bgFrom};
+    background: ${colors.surfaceModal};
     color: ${colors.text};
   `}
 
