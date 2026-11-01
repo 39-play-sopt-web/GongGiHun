@@ -63,7 +63,7 @@ function App() {
 
       {page === "ranking" && <Ranking />}
 
-      {result && (
+      {result !== null && (
         <Modal
           title={`Level ${result.level} 클리어!`}
           onClose={handelCloseResult}
