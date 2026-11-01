@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { shuffle, range } from "../utils/shuffle";
 import { saveRecord } from "../utils/storage";
-
-const SIZES = [3, 4, 5];
+import { LEVELS } from "../constants/level";
 
 const createGame = (size) => {
   const cellcount = size * size;
@@ -19,7 +18,7 @@ function useGame() {
   const [level, setLevel] = useState(1);
 
   // size, total 훅 안으로 이동
-  const size = SIZES[level - 1];
+  const size = LEVELS[level].size;
   const total = size * size * 2;
 
   const [game, setGame] = useState(() => createGame(size));
@@ -55,7 +54,7 @@ function useGame() {
   };
   const changeLevel = (nextLevel) => {
     setLevel(nextLevel);
-    setGame(createGame(SIZES[nextLevel - 1])); // 새 레벨 크기로 바로 생성
+    setGame(createGame(LEVELS[nextLevel].size)); // 새 레벨 크기로 바로 생성
     setStartTime(null);
     setElapsed(0);
   };

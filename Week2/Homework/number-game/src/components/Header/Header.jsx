@@ -1,12 +1,12 @@
 import * as S from "./Header.styles";
 import Select from "../Select/Select";
 import Timer from "../Timer/Timer";
+import { LEVELS } from "../../constants/level";
 
-const LEVEL_OPTIONS = [
-  { value: 1, label: "Level 1 (3x3)" },
-  { value: 2, label: "Level 2 (4x4)" },
-  { value: 3, label: "Level 3 (5x5)" },
-];
+const LEVEL_OPTIONS = Object.entries(LEVELS).map(([level, { size }]) => ({
+  value: Number(level),
+  label: `Level ${level} (${size}x${size})`,
+}));
 
 function Header({ page, onPageChange, level, onLevelChange, elapsed }) {
   return (
