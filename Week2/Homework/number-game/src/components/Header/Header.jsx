@@ -8,7 +8,14 @@ const LEVEL_OPTIONS = Object.entries(LEVELS).map(([level, { size }]) => ({
   label: `Level ${level} (${size}x${size})`,
 }));
 
-function Header({ page, onPageChange, level, onLevelChange, elapsed }) {
+function Header({
+  page,
+  onPageChange,
+  level,
+  onLevelChange,
+  startTime,
+  endTime,
+}) {
   return (
     <S.Wrapper>
       <S.Logo>숫자 클릭 게임</S.Logo>
@@ -32,7 +39,7 @@ function Header({ page, onPageChange, level, onLevelChange, elapsed }) {
               onChange={onLevelChange}
               options={LEVEL_OPTIONS}
             />
-            <Timer elapsed={elapsed} />
+            <Timer startTime={startTime} endTime={endTime} />
           </>
         )}
       </S.Right>

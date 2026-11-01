@@ -12,7 +12,8 @@ function App() {
     cells,
     next,
     total,
-    elapsed,
+    startTime,
+    endTime,
     level,
     size,
     handleCellClick,
@@ -36,7 +37,8 @@ function App() {
         onPageChange={handlePageChange}
         level={level}
         onLevelChange={startNewGame}
-        elapsed={elapsed}
+        startTime={startTime}
+        endTime={endTime}
       />
       {page === "game" && (
         <GameBoard
