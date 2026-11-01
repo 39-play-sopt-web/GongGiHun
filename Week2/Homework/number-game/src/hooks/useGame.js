@@ -33,10 +33,12 @@ function useGame() {
     return () => clearInterval(id);
   }, [startTime]);
 
-  const reset = () => {
-    setGame(createGame(size));
+  const startNewGame = (nextLevel = level) => {
+    setLevel(nextLevel);
+    setGame(createGame(LEVELS[nextLevel].size));
     setStartTime(null);
     setElapsed(0);
+    setWrongIndex(null);
   };
 
   const finish = () => {
@@ -50,13 +52,7 @@ function useGame() {
 
   const closeResult = () => {
     setResult(null);
-    reset();
-  };
-  const changeLevel = (nextLevel) => {
-    setLevel(nextLevel);
-    setGame(createGame(LEVELS[nextLevel].size)); // 새 레벨 크기로 바로 생성
-    setStartTime(null);
-    setElapsed(0);
+    startNewGame();
   };
 
   const handleCellClick = (index) => {
@@ -89,10 +85,9 @@ function useGame() {
     total,
     elapsed,
     level,
-    changeLevel,
     size,
     handleCellClick,
-    reset,
+    startNewGame,
     wrongIndex,
     clearWrong: () => setWrongIndex(null),
     result,

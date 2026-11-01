@@ -14,20 +14,19 @@ function App() {
     total,
     elapsed,
     level,
-    changeLevel,
     size,
     handleCellClick,
     wrongIndex,
     clearWrong,
     result,
     closeResult,
-    reset,
+    startNewGame,
   } = useGame();
 
   const handlePageChange = (nextPage) => {
     if (nextPage === page) return;
     setPage(nextPage);
-    reset();
+    startNewGame();
   };
 
   return (
@@ -36,7 +35,7 @@ function App() {
         page={page}
         onPageChange={handlePageChange}
         level={level}
-        onLevelChange={changeLevel}
+        onLevelChange={startNewGame}
         elapsed={elapsed}
       />
       {page === "game" && (
