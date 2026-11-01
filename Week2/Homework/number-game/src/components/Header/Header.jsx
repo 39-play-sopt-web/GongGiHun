@@ -38,6 +38,7 @@ function Header({
               value={level}
               onChange={onLevelChange}
               options={LEVEL_OPTIONS}
+              ariaLabel="레벨 선택"
             />
             <Timer startTime={startTime} endTime={endTime} />
           </>
