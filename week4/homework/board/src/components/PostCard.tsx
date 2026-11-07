@@ -8,13 +8,18 @@ interface PostCardProps {
 
 const PostCard = ({ post }: PostCardProps) => {
   return (
-    <Link to={`/posts/${post.id}`} className="rounded=lg hover: block border bg-gray-50 p-4">
+    <Link
+      to={`/posts/${post.id}`}
+      className="block rounded-xl border border-transparent bg-card p-5 transition hover:border-mint"
+    >
       <h2 className="truncate text-lg font-bold">{post.title}</h2>
-      <p className="mt-1 line-clamp-2 text-sm text-gray-600">{post.content}</p>
-      <div className="mt-3 flex justify-between text-xs text-gray-500">
-        <span>{post.author}</span>
-        <time dateTime={post.createdAt}>{formatDate(post.createdAt)}</time>
-      </div>{' '}
+      <p className="mt-1 line-clamp-2 text-sm text-muted">{post.content}</p>
+      <div className="mt-3 flex gap-3 text-xs">
+        <span className="font-semibold text-mint">{post.author}</span>
+        <time dateTime={post.createdAt} className="text-muted">
+          {formatDate(post.createdAt)}
+        </time>
+      </div>
     </Link>
   )
 }

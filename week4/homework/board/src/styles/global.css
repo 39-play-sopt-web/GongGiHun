@@ -1,1 +1,17 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-page: #1a1d26;
+  --color-card: #333436;
+  --color-line: #4b4e55;
+  --color-content: #f2f3f5;
+  --color-muted: #b4b8c0;
+  --color-mint: #7fe3c4;
+  --color-mint-strong: #4f9c84;
+}
+
+@layer base {
+  body {
+    @apply bg-page text-content;
+  }
+}
