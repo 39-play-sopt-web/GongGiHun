@@ -1,23 +1,41 @@
-import { Link, NavLink, Outlet } from 'react-router'
+import { Link, NavLink, Outlet, useNavigate } from 'react-router'
 import { cn } from '../utils/cn'
+import { getMemberCode, removeMemberCode } from '../utils/memberCode'
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   cn('hover:text-mint', isActive && 'text-mint')
 
 const Layout = () => {
+  const navigate = useNavigate()
+  const hasMemberCode = Boolean(getMemberCode())
+
+  const handleLogout = () => {
+    removeMemberCode()
+    navigate('/')
+  }
+
   return (
     <>
       <header className="flex items-center justify-between border-b border-line px-6 py-4">
-        <Link to="/" className="text-lg font-bold">
+        <Link to="/posts" className="text-lg font-bold">
           SOPT <span className="text-mint">BOARD</span>
         </Link>
         <nav className="flex gap-6 text-sm">
-          <NavLink to="/" end className={navLinkClass}>
+          <NavLink to="/posts" end className={navLinkClass}>
             게시글 목록
           </NavLink>
           <NavLink to="/posts/new" className={navLinkClass}>
             글쓰기
           </NavLink>
+          {hasMemberCode ? (
+            <button type="button" onClick={handleLogout} className="hover:text-mint">
+              로그아웃
+            </button>
+          ) : (
+            <Link to="/" className="hover:text-mint">
+              코드 발급
+            </Link>
+          )}
         </nav>
       </header>
       <main className="mx-auto max-w-3xl p-4">
