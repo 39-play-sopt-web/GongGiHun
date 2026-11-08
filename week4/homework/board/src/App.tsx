@@ -1,5 +1,4 @@
 import { RouterProvider } from 'react-router'
-import './styles/global.css'
 import { router } from './router'
 
 const App = () => {
