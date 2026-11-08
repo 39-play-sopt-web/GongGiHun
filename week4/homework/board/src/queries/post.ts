@@ -1,5 +1,5 @@
-import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
-import { getPostDetail, getPostList } from '../apis/post'
+import { useInfiniteQuery, useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { createPost, getPostDetail, getPostList } from '../apis/post'
 import { queryKeys } from './queryKeys'
 
 export const usePostDetail = (postId: number) => {
@@ -16,5 +16,16 @@ export const usePostList = (keyword?: string) => {
     initialPageParam: undefined as number | undefined,
     getNextPageParam: (lastPage) =>
       lastPage.hasNext ? (lastPage.nextCursor ?? undefined) : undefined,
+  })
+}
+
+export const useCreatePost = () => {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: createPost,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: queryKeys.posts.lists() })
+    },
   })
 }
