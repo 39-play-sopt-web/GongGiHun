@@ -1,5 +1,5 @@
 import { useInfiniteQuery, useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { createPost, getPostDetail, getPostList, updatePost } from '../apis/post'
+import { createPost, deletePost, getPostDetail, getPostList, updatePost } from '../apis/post'
 import { queryKeys } from './queryKeys'
 import type { UpdatePostRequest } from '../types/post'
 
@@ -38,6 +38,17 @@ export const useUpdatePost = (postId: number) => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: queryKeys.posts.lists() })
       queryClient.invalidateQueries({ queryKey: queryKeys.posts.detail(postId) })
+    },
+  })
+}
+
+export const useDeletePost = () => {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: deletePost,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: queryKeys.posts.lists() })
     },
   })
 }
