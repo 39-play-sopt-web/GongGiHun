@@ -47,7 +47,7 @@ const PostListPage = () => {
       <h1 className="mb-4 text-2xl font-bold">게시글 목록</h1>
       <SearchBar key={keyword} keyword={keyword} onSearch={handleSearch} />
 
-      {isPending && <p>불러오는 중......</p>}
+      {isPending && <p role="status">불러오는 중......</p>}
       {isError && <p>게시글 목록을 불러오지 못했어요..</p>}
       {isSuccess && posts.length === 0 && <p>게시글이 없어요.</p>}
 
@@ -59,7 +59,11 @@ const PostListPage = () => {
         ))}
       </ul>
 
-      {isFetchingNextPage && <p className="mt-4 text-center text-sm">불러오는 중..........</p>}
+      {isFetchingNextPage && (
+        <p role="status" className="mt-4 text-center text-sm">
+          불러오는 중..........
+        </p>
+      )}
       {/* 렌더링 후 observeTarget.current에 이 div가 들어감 */}
       <div ref={observeTarget} className="h-10" />
     </section>
