@@ -1,5 +1,5 @@
 import { Link, useNavigate, useParams } from 'react-router'
-import { usePostDetail, useUpdatePost } from '../queries/post'
+import { usePostDetail, useUpdatePost, useDeletePost } from '../queries/post'
 import { formatDate } from '../utils/date'
 import { useState } from 'react'
 import { getMemberCode } from '../utils/memberCode'
@@ -14,6 +14,7 @@ const PostDetailPage = () => {
 
   const { data: post, isPending, isError } = usePostDetail(Number(postId))
   const { mutate, isPending: isUpdating } = useUpdatePost(Number(postId))
+  const { mutate: deletePost, isPending: isDeleting } = useDeletePost()
 
   // 회원 코드가 없으면, 수정 모드로 들어가는 것 막기
   const handleEditClick = () => {
@@ -39,6 +40,25 @@ const PostDetailPage = () => {
         },
       },
     )
+  }
+
+  const handleDeleteClick = () => {
+    if (!getMemberCode()) {
+      alert('먼저 파트를 선택하고 코드를 발급해주세요.')
+      navigate('/')
+      return
+    }
+    if (!confirm('정말 삭제할까요? ')) return
+
+    deletePost(Number(postId), {
+      onSuccess: () => {
+        alert('게시글이 삭제되었어요,')
+        navigate('/posts', { replace: true }) // replace: 삭제된 상세 페이지를 방문 기록에서 지움. 뒤로 가기 시 목록으로 navigate
+      },
+      onError: (error) => {
+        alert(getErrorMessage(error, '게시글 삭제에 실패했어요. 다시 시도해주세요. '))
+      },
+    })
   }
 
   if (isPending) return <p>불러오는 중...</p>
@@ -87,9 +107,11 @@ const PostDetailPage = () => {
             {/* 삭제 기능은 다음 단계~~ */}
             <button
               type="button"
+              onClick={handleDeleteClick}
+              disabled={isDeleting}
               className="rounded-lg bg-mint-strong px-4 py-2 text-sm font-semibold transition-colors hover:bg-mint hover:text-page"
             >
-              삭제
+              {isDeleting ? '삭제 중...' : '삭제'}
             </button>
           </div>
         </article>
