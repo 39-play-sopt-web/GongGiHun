@@ -42,7 +42,7 @@ const SearchBar = ({ keyword = '', onSearch }: SearchBarProps) => {
         <button
           type="submit"
           disabled={!value.trim()}
-          className="rounded-lg bg-mint-strong px-5 font-semibold text-page disabled:opacity-50"
+          className="rounded-lg bg-mint-strong px-5 font-semibold text-page transition-colors enabled:hover:bg-mint disabled:cursor-not-allowed"
         >
           검색
         </button>
