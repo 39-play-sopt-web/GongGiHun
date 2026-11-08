@@ -11,3 +11,10 @@ export const removeMemberCode = () => {
   localStorage.removeItem(MEMBER_CODE_KEY)
   localStorage.removeItem(PART_KEY)
 }
+
+// 코드가 없으면 alert 후 false 반환 (글쓰기 라우트 가드, 수정/삭제 버튼에서 사용)
+export const checkMemberCode = () => {
+  if (getMemberCode()) return true
+  alert('먼저 파트를 선택하고 코드를 발급해주세요.')
+  return false
+}

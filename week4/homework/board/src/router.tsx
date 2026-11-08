@@ -4,11 +4,10 @@ import PostListPage from './pages/PostListPage'
 import MemberCodePage from './pages/MemberCodePage'
 import PostCreatePage from './pages/PostCreatePage'
 import PostDetailPage from './pages/PostDetailPage'
-import { getMemberCode } from './utils/memberCode'
+import { checkMemberCode } from './utils/memberCode'
 
 const requireMemberCode = () => {
-  if (!getMemberCode()) {
-    alert('먼저 파트를 선택하고 코드를 발급해주세요. ')
+  if (!checkMemberCode()) {
     return redirect(`/`)
   }
   return null
